@@ -84,7 +84,7 @@ This project is a Whole Slide Image (WSI) Viewer built using React and OpenSeadr
 ## Screenshots
 
 - **WSI Viewer**:
-  ![WSI Viewer](![![image](https://github.com/user-attachments/assets/5225b8ef-f473-4f02-80d9-397a63fbb674)
+  ![WSI Viewer]([[image](https://github.com/user-attachments/assets/5225b8ef-f473-4f02-80d9-397a63fbb674)
 )
 )
 
