@@ -1,199 +1,105 @@
-Whole Slide Image (WSI) Viewer - React Assignment
-This project is a Whole Slide Image (WSI) Viewer built using React and OpenSeadragon. It allows users to view high-resolution medical images, zoom in/out, and interact with bounding boxes for findings. The project is designed to mimic the functionality of the Scopio Labs website and fulfills the requirements of the React assignment.
+# Whole Slide Image (WSI) Viewer - React Assignment
 
-Features
-WSI Viewer:
+This project is a Whole Slide Image (WSI) Viewer built using React and OpenSeadragon. It allows users to view high-resolution medical images, zoom in/out, and interact with bounding boxes for findings.
 
-Zoom and pan functionality using OpenSeadragon.
+## Features
 
-Supports high-resolution images.
+- **WSI Viewer**: Zoom and pan functionality.
+- **Hub View**: Zoomed-out view with full-screen mode.
+- **Findings Panel**: Displays bounding boxes and findings.
+- **Dynamic Image Loading**: Loads images from backend or falls back to local images.
 
-Hub View:
+## Technologies Used
 
-Displays a zoomed-out view of the WSI.
+- **Frontend**: React, OpenSeadragon, TailwindCSS, Vite.
+- **Backend**: Flask, Flask-CORS.
 
-Full-screen mode support.
+## Setup and Installation
 
-Findings Panel:
+### Backend
 
-Displays bounding boxes and findings from output.json.
+1. Navigate to the backend folder:
 
-Interactive bounding boxes with coordinates and type.
+    ```bash
+    cd backend
+    ```
 
-Dynamic Image Loading:
+2. Install dependencies:
 
-Loads images from the backend (if available) or falls back to local images.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Responsive Design:
+3. Run the Flask server:
 
-Works on both desktop and mobile devices.
+    ```bash
+    python src/app.py
+    ```
 
-Technologies Used
-Frontend:
+    The backend will run on [http://localhost:5000](http://localhost:5000).
 
-React
+### Frontend
 
-OpenSeadragon (for WSI viewer)
+1. Navigate to the frontend folder:
 
-TailwindCSS (for styling)
+    ```bash
+    cd frontend
+    ```
 
-Vite (for build tool)
+2. Install dependencies:
 
-Backend:
+    ```bash
+    npm install
+    ```
 
-Flask (Python)
+3. Run the development server:
 
-Flask-CORS (for handling CORS)
+    ```bash
+    npm run dev
+    ```
 
-File Structure
-Copy
-├── backend/
-│   ├── src/
-│   │   ├── __init__.py
-│   │   ├── routes.py
-│   │   ├── app.py
-│   ├── static/
-│   │   └── images/
-│   │       └── img1.png
-│   ├── output.json
-│   ├── requirements.txt
-│   ├── README.md
-│
-├── frontend/
-│   ├── public/
-│   │   └── img1.png
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   │   ├── WSIViewer.jsx
-│   │   │   ├── HubView.jsx
-│   │   │   ├── FindingsPanel.jsx
-│   │   │   ├── ImageSelector.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── App.css
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── README.md
-Setup and Installation
-Backend Setup
-Navigate to the backend folder:
+    The frontend will run on [http://localhost:5173](http://localhost:5173).
 
-bash
-Copy
-cd backend
-Install dependencies:
+## How to Use
 
-bash
-Copy
-pip install -r requirements.txt
-Run the Flask server:
+- **WSI Viewer**: Use mouse scroll to zoom in/out and click-drag to pan.
+- **Hub View**: Displays a zoomed-out view. Click "Full Screen" for full-screen mode.
+- **Findings Panel**: Displays bounding boxes and findings. Click on a finding to view details.
 
-bash
-Copy
-python src/app.py
-The backend will run on http://localhost:5000.
+## Backend API Endpoints
 
-Frontend Setup
-Navigate to the frontend folder:
+- **Get Bounding Boxes**:
+    - Endpoint: `GET /get_bounding_boxes`
+    - Response: Returns bounding boxes from `output.json`.
 
-bash
-Copy
-cd frontend
-Install dependencies:
+- **Serve Images**:
+    - Endpoint: `GET /images/<filename>`
+    - Response: Serves images from the `static/images` folder.
 
-bash
-Copy
-npm install
-Run the development server:
+## Deployment
 
-bash
-Copy
-npm run dev
-The frontend will run on http://localhost:5173.
+- **Backend**: Deploy on Render, Heroku, or Vercel.
+- **Frontend**: Deploy on Vercel, Netlify, or GitHub Pages.
 
-How to Use
-WSI Viewer:
+## Screenshots
 
-Use the mouse scroll to zoom in/out.
+- **WSI Viewer**:
+  ![WSI Viewer](path/to/wsi-viewer-screenshot.png)
 
-Click and drag to pan the image.
+- **Hub View**:
+  ![Hub View](path/to/hub-view-screenshot.png)
 
-Hub View:
+- **Findings Panel**:
+  ![Findings Panel](path/to/findings-panel-screenshot.png)
 
-Displays a zoomed-out view of the WSI.
+## License
 
-Click the "Full Screen" button to enter full-screen mode.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-Findings Panel:
+## Contact
 
-Displays bounding boxes and findings.
-
-Click on a finding to view its details.
-
-Dynamic Image Loading:
-
-If the backend image is not available, the app will fall back to the local image (/img1.png).
-
-Backend API Endpoints
-Get Bounding Boxes:
-
-Endpoint: GET /get_bounding_boxes
-
-Response: Returns bounding boxes from output.json.
-
-Serve Images:
-
-Endpoint: GET /images/<filename>
-
-Response: Serves images from the static/images folder.
-
-Deployment
-Backend Deployment
-Deploy the Flask backend on platforms like Render, Heroku, or Vercel.
-
-Frontend Deployment
-Deploy the React frontend on platforms like Vercel, Netlify, or GitHub Pages.
-
-Screenshots
-WSI Viewer:
-WSI Viewer
-
-Hub View:
-Hub View
-
-Findings Panel:
-Findings Panel
-
-Contributing
-If you'd like to contribute to this project, please follow these steps:
-
-Fork the repository.
-
-Create a new branch (git checkout -b feature/YourFeatureName).
-
-Commit your changes (git commit -m 'Add some feature').
-
-Push to the branch (git push origin feature/YourFeatureName).
-
-Open a pull request.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
-Scopio Labs for inspiration.
-
-OpenSeadragon for the WSI viewer functionality.
-
-React and Flask communities for their amazing libraries and tools.
-
-Contact
 For any questions or feedback, feel free to reach out:
 
-Name: [Your Name]
-
-Email: [Your Email]
-
-GitHub: [Your GitHub Profile]
+- **Name**: [Your Name]
+- **Email**: [Your Email]
+- **GitHub**: [Your GitHub Profile]
