@@ -1,0 +1,24 @@
+/* .container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  width: 20%;
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+#wsi-viewer {
+  flex: 1;
+  background-color: #000;
+}
+
+#hub-view {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  border: 1px solid #ccc;
+} */
+
+@import "tailwindcss";
